@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 
 class LoginTextForm extends StatelessWidget {
   final IconData preFixIcon;
+  final IconData? surFixIcon;
+  final VoidCallback? callBackSurFix;
   final bool obscure;
   final String hint;
   const LoginTextForm(
-      {super.key, required this.preFixIcon, required this.hint, required this.obscure});
+      {super.key,
+      required this.preFixIcon,
+      required this.hint,
+      required this.obscure,
+      this.surFixIcon, this.callBackSurFix});
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
@@ -21,20 +27,26 @@ class LoginTextForm extends StatelessWidget {
         ),
         child: TextFormField(
           obscureText: obscure,
-          style:const  TextStyle(color: Colors.grey),
+          style: const TextStyle(color: Colors.grey),
           cursorColor: Colors.grey,
           decoration: InputDecoration(
-            hintText: hint,
-            hintStyle:const  TextStyle(color: Colors.grey),
-            prefixIcon: Icon(
-              preFixIcon,
-              color: Palette.deepOrange,
-            ),
-            errorBorder: borderDecoration(width),
-            enabledBorder: borderDecoration(width),
-            focusedBorder: borderDecoration(width),
-            contentPadding:const  EdgeInsets.all(10)
-          ),
+              hintText: hint,
+              hintStyle: const TextStyle(color: Colors.grey),
+              suffixIcon: IconButton(
+                icon: Icon(
+                  surFixIcon,
+                  color: Palette.deepOrange,
+                ),
+                onPressed:callBackSurFix,
+              ),
+              prefixIcon: Icon(
+                preFixIcon,
+                color: Palette.deepOrange,
+              ),
+              errorBorder: borderDecoration(width),
+              enabledBorder: borderDecoration(width),
+              focusedBorder: borderDecoration(width),
+              contentPadding: const EdgeInsets.all(10)),
         ),
       ),
     );

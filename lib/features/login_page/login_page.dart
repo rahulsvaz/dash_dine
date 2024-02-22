@@ -14,8 +14,11 @@ class LoginPage extends StatefulWidget {
     return _LoginPageState();
   }
 }
+
 class _LoginPageState extends State<LoginPage> {
   @override
+  bool obscure = true;
+
   Widget build(BuildContext context) {
     // final width = MediaQuery.sizeOf(context).width;
     final height = MediaQuery.sizeOf(context).height;
@@ -48,9 +51,15 @@ class _LoginPageState extends State<LoginPage> {
               preFixIcon: Icons.email,
             ),
             SizedBox(height: height * 0.03),
-            const LoginTextForm(
-              obscure: true
-              ,
+            LoginTextForm(
+              obscure: obscure,
+              callBackSurFix: () {
+                setState(() {
+                  obscure =!obscure;
+                  print(obscure);
+                });
+              },
+              surFixIcon: Icons.remove_red_eye,
               hint: 'Password',
               preFixIcon: Icons.password,
             ),
