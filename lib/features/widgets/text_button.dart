@@ -10,9 +10,14 @@ class TextButtonLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: callback,
-      child: Text(text,style: TextStyle(
-        color: Colors.grey,fontSize: 15
-      ),),
+      child: Text(
+        text,
+        style: const TextStyle(
+            decoration: TextDecoration.underline,
+            decorationColor: Colors.blue,
+            color: Colors.blue,
+            fontSize: 15),
+      ),
     );
   }
 }

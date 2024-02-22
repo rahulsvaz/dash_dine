@@ -28,61 +28,35 @@ class _LoginPageState extends State<LoginPage> {
             ),
             child: Image.asset('assets/images/indian-food.jpeg'),
           ),
-          Expanded(
-            child: Stack(
-              children: [
-                Positioned(
-                  left: width * 0.05,
-                  top: height * 0.02,
-                  child: Text(
-                    'Welcome !',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Palette.deepOrange),
-                  ),
-                ),
-                Positioned(
-                  top: height * 0.08,
-                  left: width * 0.02,
-                  child: const LoginTextForm(
-                    hint: 'Email',
-                    preFixIcon: Icons.email,
-                  ),
-                ),
-                Positioned(
-                  top: height * 0.16,
-                  left: width * 0.12,
-                  child: const LoginTextForm(
-                    hint: 'Password',
-                    preFixIcon: Icons.password,
-                  ),
-                ),
-                Positioned(
-                  top: height * 0.24,
-                  left: width * 0.28,
-                  child: const LoginButton(
-                    label: "Login",
-                  ),
-                ),
-                Positioned(
-                   top: height * 0.31,
-                  left: width * 0.28,
-                  child: Text('Forgot Password'),),
-                Positioned(
-                    top: height * 0.32,
-                  left: width * 0.18,
-                  child: Row(
-                    children: [
-                      const  Text( "Don't Have An Account!"),
-                      TextButtonLogin(
-                          callback: () {}, text:"Sign Up"),
-                    ],
-                  ),
+        SizedBox(height: height*0.03),
+                Text(
+                  'Welcome !',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Palette.deepOrange),
+                ), SizedBox(height: height*0.03),
+                const LoginTextForm(
+                  hint: 'Email',
+                  preFixIcon: Icons.email,
+                ), SizedBox(height: height*0.03),
+                const LoginTextForm(
+                  hint: 'Password',
+                  preFixIcon: Icons.password,
+                ), SizedBox(height: height*0.03),
+                const LoginButton(
+                  label: "Login",
+                ), SizedBox(height: height*0.03),
+                const Text('Forgot Password'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const  Text( "Don't Have An Account!"),
+                    TextButtonLogin(
+                        callback: () {}, text:"Sign Up"),
+                  ],
                 )
-              ],
-            ),
-          )
+           
         ],
       ),
     );
