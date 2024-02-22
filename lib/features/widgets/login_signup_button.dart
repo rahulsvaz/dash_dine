@@ -1,5 +1,6 @@
 import 'package:dash_dine/helper/palette.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginButton extends StatelessWidget {
   final String label;
@@ -18,7 +19,7 @@ class LoginButton extends StatelessWidget {
       child:  Center(
         child: Text(
           label,
-          style: const TextStyle(
+          style: GoogleFonts.aboreto(
               color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
         ),
       ),
