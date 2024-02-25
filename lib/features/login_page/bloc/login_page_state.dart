@@ -1,6 +1,11 @@
 part of 'login_page_bloc.dart';
 
-@immutable
-abstract class LoginPageState {}
+ class LoginPageState {
+  bool obscure = true;
+  LoginPageState({required this.obscure});
+ }
 
-class LoginPageInitial extends LoginPageState {}
+class LoginPageInitial extends LoginPageState {
+  LoginPageInitial():super(obscure: true);
+
+}

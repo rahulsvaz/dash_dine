@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
@@ -8,8 +7,12 @@ part 'login_page_state.dart';
 
 class LoginPageBloc extends Bloc<LoginPageEvent, LoginPageState> {
   LoginPageBloc() : super(LoginPageInitial()) {
-    on<LoginPageEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<ObscureTextEvent>(obscureTextEvent);
+  }
+
+  obscureTextEvent(ObscureTextEvent event, Emitter<LoginPageState> emit) {
+    final currentObscure = state.obscure;
+    final updatedValue = !currentObscure;
+    return emit(LoginPageState(obscure: updatedValue));
   }
 }

@@ -2,6 +2,9 @@ import 'package:dash_dine/helper/palette.dart';
 import 'package:flutter/material.dart';
 
 class LoginTextForm extends StatelessWidget {
+  final TextEditingController controller;
+  final String? Function(String?)? validator;
+
   final IconData preFixIcon;
   final IconData? surFixIcon;
   final VoidCallback? callBackSurFix;
@@ -9,10 +12,13 @@ class LoginTextForm extends StatelessWidget {
   final String hint;
   const LoginTextForm(
       {super.key,
+      required this.controller,
       required this.preFixIcon,
       required this.hint,
       required this.obscure,
-      this.surFixIcon, this.callBackSurFix});
+      this.surFixIcon,
+      this.callBackSurFix,
+      required this.validator});
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
@@ -26,27 +32,30 @@ class LoginTextForm extends StatelessWidget {
           borderRadius: BorderRadius.circular(width * 0.033),
         ),
         child: TextFormField(
+          validator: validator,
           obscureText: obscure,
           style: const TextStyle(color: Colors.grey),
           cursorColor: Colors.grey,
           decoration: InputDecoration(
-              hintText: hint,
-              hintStyle: const TextStyle(color: Colors.grey),
-              suffixIcon: IconButton(
-                icon: Icon(
-                  surFixIcon,
-                  color: Palette.deepOrange,
-                ),
-                onPressed:callBackSurFix,
-              ),
-              prefixIcon: Icon(
-                preFixIcon,
+            hintText: hint,
+            hintStyle: const TextStyle(color: Colors.grey),
+            suffixIcon: IconButton(
+              icon: Icon(
+                surFixIcon,
                 color: Palette.deepOrange,
               ),
-              errorBorder: borderDecoration(width),
-              enabledBorder: borderDecoration(width),
-              focusedBorder: borderDecoration(width),
-              contentPadding: const EdgeInsets.all(10)),
+              onPressed: callBackSurFix,
+            ),
+            prefixIcon: Icon(
+              preFixIcon,
+              color: Palette.deepOrange,
+            ),
+            focusedErrorBorder: borderDecoration(width),
+            errorBorder: borderDecoration(width),
+            enabledBorder: borderDecoration(width),
+            focusedBorder: borderDecoration(width),
+            contentPadding: const EdgeInsets.all(10),
+          ),
         ),
       ),
     );
