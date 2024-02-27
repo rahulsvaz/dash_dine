@@ -18,6 +18,7 @@ class LoginPage extends StatefulWidget {
   }
 }
 
+
 class _LoginPageState extends State<LoginPage> {
   bool obscure = true;
   @override
@@ -69,9 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                     controller: passWordController,
                     obscure: state.obscure,
                     callBackSurFix: () {
-                      context.read<LoginPageBloc>().add(
-                            ObscureTextEvent(),
-                          );
+                      context.read<LoginPageBloc>().add(ObscureTextEvent());
                     },
                     surFixIcon: Icons.remove_red_eye,
                     hint: 'Password',

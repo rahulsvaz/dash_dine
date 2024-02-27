@@ -1,4 +1,3 @@
-
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -9,7 +8,6 @@ class LoginPageBloc extends Bloc<LoginPageEvent, LoginPageState> {
   LoginPageBloc() : super(LoginPageInitial()) {
     on<ObscureTextEvent>(obscureTextEvent);
   }
-
   obscureTextEvent(ObscureTextEvent event, Emitter<LoginPageState> emit) {
     final currentObscure = state.obscure;
     final updatedValue = !currentObscure;
