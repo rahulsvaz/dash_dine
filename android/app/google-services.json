@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "241406769175",
+    "project_id": "dashdine-f1f7c",
+    "storage_bucket": "dashdine-f1f7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241406769175:android:af2b40ba1cf9c9d64a8452",
+        "android_client_info": {
+          "package_name": "com.example.dash_dine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhHgBSrpW1rZE_iPhkOD96m6hqxC0px_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

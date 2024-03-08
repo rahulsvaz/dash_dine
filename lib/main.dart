@@ -1,10 +1,19 @@
 import 'package:dash_dine/features/login_page/bloc/login_page_bloc.dart';
 import 'package:dash_dine/features/login_page/ui/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
-  runApp(const MyApp());
+WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(
+    const MyApp(),
+  );
+
 }
 
 class MyApp extends StatelessWidget {
@@ -15,8 +24,6 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-
-          
           create: (_) => LoginPageBloc(),
         ),
       ],
