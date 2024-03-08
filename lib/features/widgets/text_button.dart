@@ -15,7 +15,6 @@ class TextButtonLogin extends StatelessWidget {
         style: const TextStyle(
             decoration: TextDecoration.underline,
             decorationColor: Colors.blue,
-            
             color: Colors.blue,
             fontSize: 15),
       ),

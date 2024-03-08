@@ -1,4 +1,5 @@
 import 'package:dash_dine/features/login_page/bloc/login_page_bloc.dart';
+import 'package:dash_dine/features/sign_up_page/sign_up_page.dart';
 import 'package:dash_dine/features/widgets/login_sign_up_button.dart';
 import 'package:dash_dine/features/widgets/login_text_field.dart';
 import 'package:dash_dine/features/widgets/text_button.dart';
@@ -90,7 +91,18 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text("Don't Have An Account!"),
-                  TextButtonLogin(callback: () {}, text: "Sign Up"),
+                  TextButtonLogin(
+                      callback: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpPage(),
+                          ),
+                        );
+                      },
+                      text: "Sign Up"),
+
+                      
                 ],
               )
             ],
