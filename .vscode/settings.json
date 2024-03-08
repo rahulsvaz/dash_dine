@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "aboreto"
-    ]
+    ],
+    "dart.flutterHotReloadOnSave": "never"
 }

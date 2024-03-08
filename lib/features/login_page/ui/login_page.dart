@@ -1,5 +1,5 @@
 import 'package:dash_dine/features/login_page/bloc/login_page_bloc.dart';
-import 'package:dash_dine/features/widgets/login_signup_button.dart';
+import 'package:dash_dine/features/widgets/login_sign_up_button.dart';
 import 'package:dash_dine/features/widgets/login_text_field.dart';
 import 'package:dash_dine/features/widgets/text_button.dart';
 import 'package:dash_dine/helper/palette.dart';
@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -18,7 +17,6 @@ class LoginPage extends StatefulWidget {
     return _LoginPageState();
   }
 }
-
 
 class _LoginPageState extends State<LoginPage> {
   bool obscure = true;
@@ -73,7 +71,9 @@ class _LoginPageState extends State<LoginPage> {
                     callBackSurFix: () {
                       context.read<LoginPageBloc>().add(ObscureTextEvent());
                     },
-                    surFixIcon:state.obscure? Icons.remove_red_eye:Icons.remove_red_eye_outlined,
+                    surFixIcon: state.obscure
+                        ? Icons.remove_red_eye
+                        : Icons.remove_red_eye_outlined,
                     hint: 'Password',
                     preFixIcon: Icons.password,
                   );

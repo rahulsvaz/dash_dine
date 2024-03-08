@@ -13,7 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (_) => LoginPageBloc())],
+      providers: [
+        BlocProvider(
+
+          
+          create: (_) => LoginPageBloc(),
+        ),
+      ],
       child: const MaterialApp(
         home: LoginPage(),
       ),
